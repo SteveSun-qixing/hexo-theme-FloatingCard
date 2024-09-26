@@ -1,6 +1,6 @@
-# NeumorphismCard
+# FloatingCard0.01
 
-NeumorphismCard是一个为Hexo博客系统设计的自制主题，采用新拟物风格(Neumorphism)设计。
+FloatingCard0.01是一个为Hexo博客系统设计的自制主题，采用新拟物风格(Neumorphism)设计。
 
 ## 特性
 
@@ -14,6 +14,6 @@ NeumorphismCard是一个为Hexo博客系统设计的自制主题，采用新拟�
 1. 在Hexo博客根目录下，通过git克隆本主题:
 
 ```bash
-git clone https://github.com/SteveSun-qixing/hexo-theme-NeumorphismCard.git themes/neumorphismcard
+git clone https://github.com/SteveSun-qixing/hexo-theme-FloatingCard.git themes/FloatingCard
 ```
 
