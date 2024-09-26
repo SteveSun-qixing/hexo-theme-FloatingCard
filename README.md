@@ -1,6 +1,6 @@
 # FloatingCard0.01
 
-FloatingCard0.01是一个为Hexo博客系统设计的自制主题，采用新拟物风格(Neumorphism)设计。
+FloatingCard0.01是一个为Hexo博客系统设计的自制主题，采用新拟态风格设计。
 
 ## 特性
 

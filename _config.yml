@@ -5,16 +5,11 @@ card_animation: true    # 启用卡片动画效果
 # 在 Hexo 的 _config.yml 文件中添加或修改
 default_layout: post
 
-# 移除或注释掉任何与文章样式相关的配置
-# article_style:
-#   font_size: 16px
-#   line_height: 1.6
-
-# 确保文章的永久链接格式正确
-permalink: :year/:month/:day/:title/
-
 # 图片路径设置
 post_asset_folder: false
 marked:
   prependRoot: true
   postAsset: false
+
+# 用户头像设置
+user_avatar: /img/avatar.jpg  # 默认头像路径

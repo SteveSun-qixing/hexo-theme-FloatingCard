@@ -11,7 +11,7 @@ body {
     background-size: 20px 20px; /* 网格大小 */
 }
 
-/* 只在主页设置 overflow: hidden */
+/* 只在主页设置 overflow: hidden，防止滚动条出现 */
 .home-page {
     overflow: hidden;
 }
@@ -24,24 +24,24 @@ body {
 /* 只在主页显示卡片容器 */
 .home-page #card-container {
     display: block;
-    position: fixed;
+    position: fixed; /* 固定定位 */
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    pointer-events: none;
+    width: 100vw; /* 宽度为视口宽度 */
+    height: 100vh; /* 高度为视口高度 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    pointer-events: none; /* 允许点击穿透到下层元素 */
 }
 
-/* 修改卡片样式 */
+/* 卡片样式 */
 .card {
-    position: absolute;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, z-index 0s; /* 添加 z-index 过渡 */
-    will-change: transform, box-shadow, z-index;
+    position: absolute; /* 绝对定位 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+    transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, z-index 0s; /* 添加过渡效果 */
+    will-change: transform, box-shadow, z-index; /* 优化性能 */
     opacity: 0; /* 初始透明度为0，用于淡入效果 */
-    cursor: pointer;
+    cursor: pointer; /* 鼠标悬停时显示手型 */
     z-index: 10; /* 初始 z-index */
     pointer-events: auto; /* 确保卡片可以接收鼠标事件 */
     display: flex;
@@ -58,8 +58,8 @@ body {
 
 /* 卡片悬停效果 */
 .card:hover {
-    transform: scale(1.05) translateY(-5px);
-    z-index: 1000; /* 添加悬停时的 z-index 变化 */
+    transform: scale(1.05) translateY(-5px); /* 放大并向上移动 */
+    z-index: 1000; /* 提高悬停卡片的层级 */
 }
 
 /* 卡片标题样式 */
@@ -93,7 +93,7 @@ body {
     100% { transform: scale(1); }
 }
 
-/* 修改浮动动画关键帧 */
+/* 浮动动画关键帧 */
 @keyframes float {
     0%, 100% { 
         transform: translate(0, 0) rotate(0deg); 
@@ -135,6 +135,7 @@ body {
     overflow-y: auto; /* 允许垂直滚动 */
 }
 
+/* 文章内容卡片样式 */
 .content-card {
     background-color: #ffffff;
     border-radius: 15px;
@@ -146,23 +147,27 @@ body {
     text-align: center; /* 文本居中 */
 }
 
+/* 文章标题样式 */
 .article-title {
     font-size: 2em;
     margin-bottom: 0.5em;
     text-align: center; /* 标题居中 */
 }
 
+/* 文章元信息样式 */
 .article-meta {
     color: #666;
     margin-bottom: 1em;
     text-align: center; /* 元信息居中 */
 }
 
+/* 文章内容样式 */
 .article-content {
     font-size: 1.1em;
     text-align: left; /* 文章内容左对齐 */
 }
 
+/* 文章内容标题样式 */
 .article-content h1,
 .article-content h2,
 .article-content h3 {
@@ -171,10 +176,12 @@ body {
     text-align: center; /* 标题居中 */
 }
 
+/* 文章段落样式 */
 .article-content p {
     margin-bottom: 1em;
 }
 
+/* 文章图片样式 */
 .article-content img {
     max-width: 100%;
     height: auto;
@@ -196,4 +203,36 @@ body {
     height: auto;
     display: block;
     margin: 1em auto;
+}
+
+/* 头像样式 */
+.user-avatar {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%; /* 圆形头像 */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+/* 头像图片样式 */
+.user-avatar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中图片 */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover; /* 确保填满圆形 */
+}
+
+/* 头像容器样式 */
+.user-avatar-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中定位 */
+    z-index: 1000; /* 确保头像在卡片之上 */
 }
