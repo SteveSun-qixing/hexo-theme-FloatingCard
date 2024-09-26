@@ -1,2 +1,19 @@
-# hexo-theme-NeumorphismCard
-一款新拟态的卡片风格的hexo主题
+# NeumorphismCard
+
+NeumorphismCard是一个为Hexo博客系统设计的自制主题，采用新拟物风格(Neumorphism)设计。
+
+## 特性
+
+- 新拟物风格设计，给人以柔和、现代的视觉体验
+- 简洁明了的文章卡片展示
+- 动态生成文章卡片
+- 独特的文章页面布局
+
+## 安装
+
+1. 在Hexo博客根目录下，通过git克隆本主题:
+
+```bash
+git clone https://github.com/SteveSun-qixing/hexo-theme-NeumorphismCard.git themes/neumorphismcard
+```
+
