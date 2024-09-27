@@ -1,0 +1,10 @@
+# 主题配置
+theme_color: '#f0f0f0'  # 主题颜色,设置为浅灰色
+card_animation: true    # 启用卡片动画效果
+
+# 在 Hexo 的 _config.yml 文件中添加或修改
+default_layout: post
+
+# 自定义头像设置
+avatar: # 留空则使用默认图片
+

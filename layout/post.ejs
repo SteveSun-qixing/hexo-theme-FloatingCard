@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 设置文档字符编码 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口,使页面在移动设备上正确显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置页面标题,使用当前页面标题和网站标题 -->
+    <title><%= page.title %> | <%= config.title %></title>
+    <!-- 引入样式文件 -->
+    <%- css('css/style.css') %>
+</head>
+<body class="article-page">
+    <!-- 主要内容卡片 -->
+    <div class="content-card">
+        <!-- 文章标题 -->
+        <h1 class="article-title"><%= page.title %></h1>
+        <!-- 文章元数据 -->
+        <div class="article-meta">
+            <!-- 如果存在发布日期,则显示 -->
+            <% if (page.date) { %>
+                <span class="article-date"><%- date(page.date, config.date_format) %></span>
+            <% } %>
+        </div>
+        <!-- 文章主体内容 -->
+        <article class="article-content">
+            <%- page.content %>
+        </article>
+    </div>
+    <!-- 引入JavaScript文件 -->
+    <%- js('js/script.js') %>
+</body>
+</html>

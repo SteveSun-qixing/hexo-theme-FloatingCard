@@ -1,0 +1,199 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* 浅灰色背景 */
+    /* 创建网格背景 */
+    background-image: 
+        linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+        linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+    background-size: 20px 20px; /* 网格大小 */
+}
+
+/* 只在主页设置 overflow: hidden */
+.home-page {
+    overflow: hidden;
+}
+
+/* 卡片容器样式 */
+#card-container {
+    display: none; /* 默认隐藏卡片容器 */
+}
+
+/* 只在主页显示卡片容器 */
+.home-page #card-container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* 防止容器阻挡其他元素的交互 */
+}
+
+/* 卡片样式 */
+.card {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, z-index 0s; /* 添加过渡效果 */
+    will-change: transform, box-shadow, z-index; /* 优化性能 */
+    opacity: 0; /* 初始透明度为0，用于淡入效果 */
+    cursor: pointer;
+    z-index: 10; /* 初始 z-index */
+    pointer-events: auto; /* 确保卡片可以接收鼠标事件 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: white;
+    border: 2px solid;
+}
+
+/* 卡片悬停效果 */
+.card:hover {
+    transform: scale(1.05) translateY(-5px);
+    z-index: 1000; /* 悬停时提高 z-index */
+}
+
+/* 卡片标题样式 */
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+/* 卡片日期样式 */
+.card p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* 新卡片动画类 */
+.card-new {
+    animation: bounceIn 0.6s;  /* 新卡片弹入动画 */
+}
+
+/* 卡片浮动动画类 */
+.card-float {
+    animation: float 10s ease-in-out infinite;
+    animation-delay: calc(var(--delay) * -1s);  /* 随机延迟浮动动画 */
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 弹入动画关键帧 */
+@keyframes bounceIn {
+    0% { transform: scale(0.1); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* 浮动动画关键帧 */
+@keyframes float {
+    0%, 100% { 
+        transform: translate(0, 0) rotate(0deg); 
+    }
+    25% { 
+        transform: translate(var(--float-x1), var(--float-y1)) rotate(var(--float-rotate1)); 
+    }
+    50% { 
+        transform: translate(var(--float-x2), var(--float-y2)) rotate(var(--float-rotate2)); 
+    }
+    75% { 
+        transform: translate(var(--float-x3), var(--float-y3)) rotate(var(--float-rotate3)); 
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    /* 在小屏幕上调整卡片大小 */
+    .card {
+        width: 80% !important;
+        height: auto !important;
+    }
+}
+
+/* 暂停动画的样式 */
+.card-pause {
+    animation-play-state: paused !important;
+}
+
+/* 文章页面样式 */
+.article-page {
+    background-color: #f0f0f0; /* 与主页背景色保持一致 */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 允许内容溢出时滚动 */
+    padding: 20px;
+    box-sizing: border-box; /* 确保 padding 不会增加页面宽度 */
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+
+/* 文章内容卡片样式 */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 50%;
+    max-width: 800px;
+    margin: 20px auto; /* 添加上下边距 */
+    text-align: center; /* 文本居中 */
+}
+
+/* 文章标题样式 */
+.article-title {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    text-align: center; /* 标题居中 */
+}
+
+/* 文章元信息样式 */
+.article-meta {
+    color: #666;
+    margin-bottom: 1em;
+    text-align: center; /* 元信息居中 */
+}
+
+/* 文章内容样式 */
+.article-content {
+    font-size: 1.1em;
+    text-align: left; /* 文章内容左对齐 */
+}
+
+/* 文章内容中的标题样式 */
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: center; /* 标题居中 */
+}
+
+/* 文章内容中的段落样式 */
+.article-content p {
+    margin-bottom: 1em;
+}
+
+/* 文章内容中的图片样式 */
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .content-card {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
